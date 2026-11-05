@@ -1,0 +1,16 @@
+[package]
+name = "queue"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+json = ["dep:serde", "dep:serde_json"]
+
+[dependencies]
+async-nats = "0.51.0"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+tokio = { version = "1.54.1", features = ["rt", "sync", "macros", "signal"] }
+tracing = "0.1"
+serde = { version = "1", optional = true }
+serde_json = { version = "1", optional = true }
